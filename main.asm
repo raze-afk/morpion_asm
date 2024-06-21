@@ -33,61 +33,65 @@ section .text
 	global _start
 
 _start:
-	mov rsi, playeur1x
-	mov rdx, playeur1xlen
-    call _printText
-
-	jumpligne
-
-	mov rsi, playeur1xresp
-	call _inputuser
-
-	jumpligne
-
-	mov rsi, playeur1y
-	mov rdx, playeur1ylen
-	call _printText
-
-	jumpligne
-
-	mov rsi, playeur1yresp
-    call _inputuser
-
-	jumpligne
-
-	;search index in matrice
-	convertionToInt playeur1xresp, playeur1yresp
-    call _checkPosition
-
-	jumpligne
-
-	mov rsi, playeur2x
-	mov rdx, playeur2xlen
-	call _printText
-
-	jumpligne
-
-	mov rsi, playeur2xresp
-	call _inputuser
-
-	jumpligne
-
-	mov rsi, playeur2y
-	mov rdx, playeur2ylen
-	call _printText
-
-	jumpligne
-
-	mov rsi, playeur2yresp
-	call _inputuser
-
-	jumpligne
-
-	;search idex in matrice
-    convertionToInt playeur2xresp, playeur2yresp
-    call _checkPosition
-
-	jumpligne
-
+	call _playeur1trune
+	call _playeur2trune
 	jmp _start
-	exit
+    	exit
+
+_playeur1trune:
+	mov rsi, playeur1x
+        mov rdx, playeur1xlen
+    	call _printText
+
+        jumpligne
+
+        mov rsi, playeur1xresp
+        call _inputuser
+
+        jumpligne
+
+        mov rsi, playeur1y
+        mov rdx, playeur1ylen
+        call _printText
+
+        jumpligne
+
+        mov rsi, playeur1yresp
+    	call _inputuser
+
+        jumpligne
+
+        ;search index in matrice
+        convertionToInt playeur1xresp, playeur1yresp
+    	call _checkPosition
+
+_playeur2trune:
+	jumpligne
+
+        mov rsi, playeur2x
+        mov rdx, playeur2xlen
+        call _printText
+
+        jumpligne
+
+        mov rsi, playeur2xresp
+        call _inputuser
+
+        jumpligne
+
+        mov rsi, playeur2y
+        mov rdx, playeur2ylen
+        call _printText
+
+        jumpligne
+
+        mov rsi, playeur2yresp
+        call _inputuser
+
+        jumpligne
+
+        ;search idex in matrice
+    	convertionToInt playeur2xresp, playeur2yresp
+    	call _checkPosition
+
+	jumpligne
